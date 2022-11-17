@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% if title %}{{ title }} - {% endif %}David Hunter</title>
+  </head>
+  
+  <body{% if background %} background="{{ background }}"{% endif %}>
+    <font face="sans-serif"{% if color %} color="{{ color }}"{% endif %}>
+      <center>
+        <h1>David Hunter</h1>
+        
+        {% if color %}
+          <p><a href="/"><font color="{{ color }}">Home</font></a> <a href="/about"><font color="{{ color }}">About</font></a> <a href="/contact"><font color="{{ color }}">Contact</font></a></p>
+        {% else %}
+          <p><a href="/"><font color="{{ color }}">Home</font></a> <a href="/about"><font color="{{ color }}">About</font></a> <a href="/contact"><font color="{{ color }}">Contact</font></a></p>
+        {% endif %}
+      </center>
+      <hr>
+      
+      {{ content | safe }}
+    </font>
+  </body>
+</html>
